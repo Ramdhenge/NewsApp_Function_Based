@@ -16,7 +16,6 @@ export default function News(props) {
     return str
   }
 
-    document.title = `News - ${capitalizeFLetter(props.category)}`  
 
   const updateNews = async()=> {
     props.setProgress(10)
@@ -33,8 +32,8 @@ export default function News(props) {
   }
 
   const fetchData = async () => {
+    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page+1}&pagesize=${props.pageSize}`
     setPage(page + 1 )
-    const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apikey}&page=${page}&pagesize=${props.pageSize}`
     setLoading(true)
     let data = await fetch(url)
     let parsedData = await data.json()
@@ -44,7 +43,9 @@ export default function News(props) {
   }
 
   useEffect(()=>{
+    document.title = `News - ${capitalizeFLetter(props.category)}`  
     updateNews()
+    // eslint-disable-next-line
   }, [])
 
     
