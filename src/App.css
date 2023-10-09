@@ -36,3 +36,35 @@
     transform: rotate(360deg);
   }
 }
+
+
+.bg-clr{
+  background: rgb(44, 44, 44);
+}
+
+.clr-light{
+  color: white;
+}
+
+.top-scroll{
+  margin: 2.5%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 4vh;
+  background: rgb(61, 61, 61);
+  border-radius: 50%;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  cursor: pointer;
+  z-index: 9; 
+  transition: all .7s;
+}
+
+.top{
+  height: 4%; 
+}
